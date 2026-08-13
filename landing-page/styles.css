@@ -908,6 +908,24 @@ body {
     .hero-title {
         font-size: 2rem;
     }
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    .hero-cta .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .hero-bg-glow {
+        width: 100vw;
+        max-width: 100%;
+        height: 300px;
+    }
     .hero-stats {
         flex-direction: column;
         gap: 1.25rem;
@@ -917,9 +935,26 @@ body {
         width: 100%;
         height: 1px;
     }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .nav-actions {
+        display: none;
+    }
     .footer-top {
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+    .cta-title {
+        font-size: 1.8rem;
+    }
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .cta-buttons .btn {
+        width: 100%;
+        justify-content: center;
     }
 }
