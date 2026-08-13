@@ -44,6 +44,11 @@
     padding: 0;
 }
 
+img, svg, video, picture {
+    max-width: 100%;
+    display: block;
+}
+
 html {
     scroll-behavior: smooth;
     font-size: 16px;
