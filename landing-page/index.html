@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عون — رفيقك في رحلة القرآن الكريم والذكر</title>
+    <meta name="description" content="تطبيق عون — منصة إسلامية متكاملة بـ 604 صفحة عثمانية، التفسير الميسر، الورد اليومي، مواقيت الصلاة والأذان، الأذكار والسبحة، ومجالس الحفظ الجماعي. حمّل APK الأندرويد المباشر الآن.">
+    <meta name="keywords" content="قرآن, مصحف, ورد يومي, أذكار, أدعية, مواقيت الصلاة, الأذان, حلقات حفظ, عون, Quran Connect">
+    <meta name="theme-color" content="#040E0B">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="عون — رفيقك في رحلة القرآن الكريم والذكر">
+    <meta property="og:description" content="تطبيق إسلامي شامل ومجاني بالكامل بتصميم روحاني فاخر وخطوط عثمانية أصيلة.">
+    <meta property="og:image" content="assets/app_icon.png">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/app_icon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Ambient Background Orbs -->
+    <div class="ambient-bg">
+        <div class="ambient-orb ambient-orb--1"></div>
+        <div class="ambient-orb ambient-orb--2"></div>
+        <div class="ambient-orb ambient-orb--3"></div>
+    </div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <span>✨ يسعدنا استقبال آرائكم وتقييماتكم النهائية للنسخة المباشرة عبر تطبيق عون 🕌</span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <img src="assets/app_icon.png" alt="عون" class="nav-logo-img">
+                <span class="logo-text">عَوْن</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">الرئيسية</a></li>
+                <li><a href="#features">المميزات الشاملة</a></li>
+                <li><a href="#install">دليل التثبيت</a></li>
+                <li><a href="#about">عن عون</a></li>
+                <li><a href="#faq">الأسئلة الشائعة</a></li>
+                <li><a href="#download" class="nav-cta">تحميل مجاني (APK)</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="القائمة">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═══════════ Hero Section ═══════════ -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge animate-on-scroll">
+                    <span class="badge-dot"></span>
+                    إصدار الأندرويد v1.1.0 متاح الآن للتجربة والملاحظات
+                </div>
+
+                <h1 class="hero-title animate-on-scroll">
+                    <span class="title-main">عَوْن</span>
+                    <span class="title-sub">رفيقك الرقمي الأكمل في رحلة القرآن والذكر</span>
+                </h1>
+
+                <p class="hero-description animate-on-scroll">
+                    تجربة إسلامية متكاملة تجمع بين خطوط المصحف العثمانية المعتمَدة، التفسير الميسر، الورد اليومي ومتابعة الختمة، مواقيت الصلاة والأذان، الأذكار والسبحة، ومجالس الحفظ والتسميع — في بيئة روحانية راقية 100% مجانية وبدون إعلانات.
+                </p>
+
+                <div class="hero-actions animate-on-scroll">
+                    <a href="https://github.com/abdulmalikaljunaid/Aoun/releases/download/v1.1.0/aoun_v1.1.0.apk" class="btn btn-primary" download id="mainDownloadBtn">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        تحميل النسخة المباشرة (APK)
+                        <span class="btn-badge">Android APK</span>
+                    </a>
+                    <a href="#features" class="btn btn-ghost">
+                        استكشف كافة المزايا
+                        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="hero-stats animate-on-scroll">
+                    <div class="stat-item">
+                        <span class="stat-number">604</span>
+                        <span class="stat-text">صفحة بالرسم العثماني</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">114</span>
+                        <span class="stat-text">سورة بتفسيرها الميسر</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-text">مجاني وبدون إعلانات</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual animate-on-scroll">
+                <div class="phone-mockup">
+                    <div class="phone-frame">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="screen-header">
+                                <span>سورة الفاتحة</span>
+                                <span class="screen-time">05:30 م</span>
+                            </div>
+                            <div class="screen-content">
+                                <div class="quran-bismillah">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+                                <div class="quran-line">ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ ﴿١﴾</div>
+                                <div class="quran-line">ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ ﴿٢﴾ مَـٰلِكِ يَوْمِ ٱلدِّينِ ﴿٣﴾</div>
+                                <div class="quran-line">إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ﴿٤﴾</div>
+                                <div class="quran-line">ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ ﴿٥﴾</div>
+                                <div class="quran-line last">صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ ﴿٦﴾</div>
+                            </div>
+                            <div class="screen-footer-bar">
+                                <span class="wird-tag">🔥 الستريك 7 أيام</span>
+                                <span>صفحة ١</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phone-reflection"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ Features Section ═══════════ -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">المميزات الشاملة</span>
+                <h2 class="section-title">منظومة ميزات إسلامية متكاملة</h2>
+                <p class="section-subtitle">صُممت كل ميزة بأعلى معايير الإتقان والجودة لتُرافقك في كافة تفاصيل يومك</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll" style="--i: 0">
+                    <div class="feature-icon-box"><span>📖</span></div>
+                    <h3>المصحف الشريف بالرسم العثماني</h3>
+                    <p>عرض 604 صفحة معتمدة بخطوط QCF الأصلية لمجمع الملك فهد، مع علامات الوقف والوصل، إشارات السجدة، والوضع الليلي الروحاني المريح للعين.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll" style="--i: 1">
+                    <div class="feature-icon-box"><span>🎯</span></div>
+                    <h3>الوِرد اليومي والختمة الذكية</h3>
+                    <p>حدّد هدفك اليومي بالصفحات أو الأجزاء، وتابع نسبة إنجازك اليومي والشهري مع تذكير متكيف يُعينك على مواصلة الختمة دون انقطاع.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll" style="--i: 2">
+                    <div class="feature-icon-box"><span>🕌</span></div>
+                    <h3>مواقيت الصلاة والأذان التفاعلي</h3>
+                    <p>حساب دقيق لمواقيت الصلاة حسب موقعك الجغرافي، مع تنبيهات الأذان الشجية (مكة، المدينة، الأقصى)، ودعم الوقت المتبقي لكل صلاة.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll" style="--i: 3">
+                    <div class="feature-icon-box"><span>📚</span></div>
+                    <h3>التفسير الميسّر الفوري</h3>
+                    <p>تصفح تفسير كل آية أو السورة كاملة بنقرة واحدة من التفسير الميسر الموثوق، مع دعم العمل كاملاً بدون الحاجة للاتصال بالإنترنت.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll" style="--i: 4">
+                    <div class="feature-icon-box"><span>🤲</span></div>
+                    <h3>حصن المسلم والسبحة الذكية</h3>
+                    <p>أذكار الصباح والمساء، أذكار الصلاة والنوم والأدعية القرآنية، مرفقة بعداد ذكي لمسي وتأثيرات اهتزازية خفيفة مع حفظ التقدم.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll" style="--i: 5">
+                    <div class="feature-icon-box"><span>👥</span></div>
+                    <h3>حلقات الحفظ والمجالس القرآنية</h3>
+                    <p>أنشئ أو انضم إلى حلقات التحفيظ الجماعي والتسميع مع أصدقائك أو معلمك، وتابع الحفظ والتثبيت مع إحصائيات الدقة والالتزام.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll" style="--i: 6">
+                    <div class="feature-icon-box"><span>🔥</span></div>
+                    <h3>سلسلة المواظبة (Streaks)</h3>
+                    <p>نظام تحفيزي فريد يحسب أيامك المتتالية في قراءة القرآن، مع ميزة تجميد السلسلة للحماية في حالات العذر والإرهاق.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll" style="--i: 7">
+                    <div class="feature-icon-box"><span>👤</span></div>
+                    <h3>وضع الزائر والمرونة التامة</h3>
+                    <p>استخدم التطبيق وكافة ميزاته الأساسية فوراً كزائر بدون الحاجة للتسجيل الإجباري، مع خيار المزامنة السحابية الآمنة وقتما تشاء.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ Installation Guide Section ═══════════ -->
+    <section class="install" id="install">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">دليل التثبيت السريع</span>
+                <h2 class="section-title">كيفية تثبيت ملف الـ APK على أندرويد</h2>
+                <p class="section-subtitle">خطوات بسيطة وسريعة لتثبيت النسخة المباشرة على هاتفك فوراً</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">⬇️</div>
+                    <h4>تحميل الملف</h4>
+                    <p>اضغط على زر "تحميل التطبيق" في الأعلى لتنزيل ملف <code>aoun_v1.1.0.apk</code> مباشرة على هاتفك.</p>
+                </div>
+
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">⚙️</div>
+                    <h4>السماح بالتثبيت</h4>
+                    <p>عند فتح الملف، إذا ظهر تحذير التثبيت من مصادر خارجية، اضغط "الإعدادات" وفعل "السماح من هذا المصدر".</p>
+                </div>
+
+                <div class="step-card animate-on-scroll">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">📲</div>
+                    <h4>تثبيت وبدء الرحلة</h4>
+                    <p>اضغط "تثبيت" وافتح تطبيق عون وابدأ تجاربك وشاركونا ملاحظاتكم الروحانية الثمينة!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ About Section ═══════════ -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-card animate-on-scroll">
+                <div class="about-bismillah">﷽</div>
+                <h2 class="about-heading">رؤيتنا في تطبيق عَوْن</h2>
+                <p class="about-body">
+                    تطبيق عون تم تطويره ليجمع بين روحانية الكلمة الطيبة وأرقى التقنيات البرمجية الحديثة. نحن نؤمن بأن العبادة والتعامل مع القرآن الكريم يجب أن يكونا سلسين، أنيقين، وخاليين تماماً من أية تشتيتات إعلانية أو تجارية.
+                </p>
+                <div class="about-pillars">
+                    <div class="pillar">
+                        <div class="pillar-icon">🛡️</div>
+                        <strong>أمان وخصوصية 100%</strong>
+                        <p>لا يتم تتبع بياناتك أو مشاركتها نهائياً</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon">⚡</div>
+                        <strong>أداء فائق وبدون إنترنت</strong>
+                        <p>تصفح سريع جداً بدون استهلاك بيانات</p>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon">✨</div>
+                        <strong>تصميم روحاني فاخر</strong>
+                        <p>ألوان وتفاصيل مريحة للعين والعقل</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ FAQ Section ═══════════ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">الأسئلة الشائعة</span>
+                <h2 class="section-title">إجابات لجميع استفساراتكم</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question">
+                        <span>هل التطبيق مجاني بالكامل وبدون إعلانات؟</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نعم، تطبيق عون مجاني 100% لجميع المسلمين، وخالٍ تماماً من أية إعلانات تجارية لضمان الخشوع والراحة الكاملة أثناء القراءة والذكر.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question">
+                        <span>متى يتوفر التطبيق على متجر Google Play ومتجر App Store؟</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نسخة الـ APK الحالية هي للتقييم والتجربة النهائية واكتشاف أي ملاحظات. فور اكتمال ملاحظات المستخدمين، سيتم نشر النسخة مباشرة على متجر قوقل بلاي (Google Play) ومتجر آبل (App Store).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question">
+                        <span>هل يعمل التطبيق وتفسير الآيات بدون اتصال بالإنترنت؟</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نعم، جميع صفحات المصحف الشريف والتفسير الميسر والأذكار ومواقيت الصلاة تعمل كاملاً دون الحاجة للاتصال بالإنترنت.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ Download CTA Section ═══════════ -->
+    <section class="download" id="download">
+        <div class="container">
+            <div class="download-card animate-on-scroll">
+                <div class="dl-glow"></div>
+                <div class="dl-content">
+                    <img src="assets/app_icon.png" alt="عون" class="dl-icon">
+                    <h2 class="dl-title">ابدأ رحلتك الروحانية مع عون اليوم</h2>
+                    <p class="dl-subtitle">حمل نسخة الأندرويد المباشرة مجاناً وقدم لنا رأيك وتجربتك</p>
+                    <a href="https://github.com/abdulmalikaljunaid/Aoun/releases/download/v1.1.0/aoun_v1.1.0.apk" class="btn btn-primary btn-lg" download>
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        تحميل APK الإيجابي المباشر (1.1.0)
+                    </a>
+                    <span class="dl-note">يدعم أجهزة Android 6.0 وإلى أحدث إصدار</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ Footer ═══════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="assets/app_icon.png" alt="عون" class="footer-logo">
+                    <div>
+                        <span class="footer-name">عَوْن</span>
+                        <p class="footer-tagline">رفيقك الرقمي في رحلة القرآن الكريم والذكر</p>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <a href="#hero">الرئيسية</a>
+                    <a href="#features">المميزات</a>
+                    <a href="#install">دليل التثبيت</a>
+                    <a href="#about">عن التطبيق</a>
+                    <a href="#faq">الأسئلة الشائعة</a>
+                    <a href="#download">تحميل</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-dua">اللهم اجعل القرآن العظيم ربيع قلوبنا ونور صدورنا وجلاء أحزاننا ✨</p>
+                <p class="footer-copy">© 2026 تطبيق عون (Quran Connect). جميع الحقوق محفوظة.</p>
+                <p class="footer-credit">صُنع بواسطة <a href="https://portfolio-abdulmalik.vercel.app" target="_blank" rel="noopener" class="author-link">عبدالملك الجنيد</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
