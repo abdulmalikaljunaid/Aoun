@@ -19,13 +19,16 @@ if (-not $Token -or $Token -match "PASTE_YOUR|YOUR_GITHUB|PUT_YOUR") {
     exit 1
 }
 
-$apkPath = "C:\Aoun\quran_connect\aoun_v1.2.0_release.apk"
+$apkPath = "C:\Aoun\quran_connect\aoun_v1.3.0_release.apk"
 if (-not (Test-Path $apkPath)) {
     $apkPath = "C:\Aoun\quran_connect\build\app\outputs\flutter-apk\app-release.apk"
 }
-$tagName = "v1.2.0"
-$releaseName = "Aoun v1.2.0"
-$apkFileName = "aoun_v1.2.0.apk"
+if (-not (Test-Path $apkPath)) {
+    $apkPath = "C:\Aoun\quran_connect\build\app\outputs\flutter-apk\app-arm64-v8a-release.apk"
+}
+$tagName = "v1.3.0"
+$releaseName = "Aoun v1.3.0"
+$apkFileName = "aoun_v1.3.0.apk"
 
 if (-not (Test-Path $apkPath)) {
     Write-Host "Error: APK file not found at: $apkPath" -ForegroundColor Red
@@ -67,34 +70,22 @@ if ($oldAsset) {
 
 # رفع ملف APK المباشر إلى GitHub Releases
 $uploadUrl = "https://uploads.github.com/repos/$Owner/$Repo/releases/$($release.id)/assets?name=$apkFileName"
-Write-Host "Uploading APK ($apkFileName) to $uploadUrl ..." -ForegroundColor Cyan
+Write-Host "Uploading APK ($apkFileName) to $uploadUrl using curl..." -ForegroundColor Cyan
 $apkPathResolved = (Resolve-Path $apkPath).Path
 
-try {
-    $uploadHeaders = @{
-        "Authorization" = "Bearer $Token"
-        "Content-Type"  = "application/vnd.android.package-archive"
-    }
-    $response = Invoke-RestMethod -Uri $uploadUrl -Headers $uploadHeaders -Method Post -InFile $apkPathResolved -TimeoutSec 900
-    Write-Host "✅ Upload complete!" -ForegroundColor Green
-    Write-Host "Direct Download Link: $($response.browser_download_url)" -ForegroundColor Green
-} catch {
-    Write-Host "Invoke-RestMethod error: $_" -ForegroundColor Red
-    Write-Host "Retrying with curl..." -ForegroundColor Yellow
-    $curlUrl = "`"$uploadUrl`""
-    $resp = & curl.exe -s -S -L -X POST `
-        -H "Authorization: Bearer $Token" `
-        -H "Accept: application/vnd.github.v3+json" `
-        -H "Content-Type: application/vnd.android.package-archive" `
-        --data-binary "@$apkPathResolved" `
-        --retry 5 --retry-delay 5 `
-        $uploadUrl 2>&1
+$resp = & curl.exe --http1.1 -S -L -X POST `
+    -H "Authorization: Bearer $Token" `
+    -H "Accept: application/vnd.github.v3+json" `
+    -H "Content-Type: application/vnd.android.package-archive" `
+    --data-binary "@$apkPathResolved" `
+    --retry 10 --retry-delay 3 --retry-all-errors `
+    $uploadUrl 2>&1
 
-    if ($LASTEXITCODE -ne 0) {
-        Write-Host "Upload failed: $resp" -ForegroundColor Red
-        exit 1
-    }
-    $response = $resp | ConvertFrom-Json
-    Write-Host "✅ Upload complete via curl!" -ForegroundColor Green
-    Write-Host "Direct Download Link: $($response.browser_download_url)" -ForegroundColor Green
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Upload failed: $resp" -ForegroundColor Red
+    exit 1
 }
+
+$response = $resp | ConvertFrom-Json
+Write-Host "`n✅ Upload complete via curl!" -ForegroundColor Green
+Write-Host "Direct Download Link: $($response.browser_download_url)" -ForegroundColor Green
